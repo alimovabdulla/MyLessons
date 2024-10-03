@@ -50,3 +50,11 @@ for num in numbers:
  
 print("Ən böyük ədəd:", max_num)
 print("Ən kiçik ədəd:", min_num)
+
+
+
+
+
+
+
+
