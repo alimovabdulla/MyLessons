@@ -21,16 +21,30 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="DataTypes.py" />
-    <Compile Include="Ders-1.py" />
-    <Compile Include="Ders-3.py" />
-    <Compile Include="Ders-2.py" />
-    <Compile Include="Ders-4.py" />
+    <Compile Include="Examples\api.py" />
+    <Compile Include="Lessons\First Month\DataTypes.py" />
+    <Compile Include="Lessons\First Month\Ders-1.py" />
+    <Compile Include="Lessons\First Month\Ders-3.py" />
+    <Compile Include="Lessons\First Month\Ders-2.py" />
+    <Compile Include="Lessons\First Month\Ders-4.py" />
+    <Compile Include="Lessons\First Month\Ders-5.py" />
+    <Compile Include="Lessons\First Month\Ders-6.py" />
+    <Compile Include="Examples\filehandling.py" />
+    <Compile Include="Examples\sqllite3.py" />
     <Compile Include="Tasks\Task-1.py" />
     <Compile Include="Tasks\Task-2.py" />
+    <Compile Include="Tasks\Task-3.py" />
     <Compile Include="Test.py" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Examples\" />
+    <Folder Include="Lessons\First Month\" />
+    <Folder Include="Lessons\Fourth Month\" />
+    <Folder Include="Lessons\Fifth Month\" />
+    <Folder Include="Lessons\" />
+    <Folder Include="Lessons\Sixth Month\" />
+    <Folder Include="Lessons\Third Month\" />
+    <Folder Include="Lessons\Second Month\" />
     <Folder Include="Tasks\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
