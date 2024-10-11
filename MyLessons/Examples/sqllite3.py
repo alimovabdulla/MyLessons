@@ -15,8 +15,8 @@ def menu():
         
 def db_yarat():
     cursor.execute('''              
-    create table if not exists fehleler(
-    id integer primary key autoincrement,
+    CREATE TABLE IF NOT EXISTS fehleler(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     name text not null,
     surname text not null,
     age integer  not null
@@ -28,14 +28,14 @@ def isci_elaveet():
     name = input("iscinin adin daxil edin\n:")
     surname = input("iscinin soyadin daxil edin\n:")
     age = int(input("iscinin yasin geyd edin\n:"))
-    cursor.execute('insert into fehleler(name,surname,age) values (?,?,?)',
+    cursor.execute('INSERT INTO fehleler(name,surname,age) VALUES (?,?,?)',
                    (name,surname,age))
     conn.commit()
     print("ugurla elave edildi!\n")
      
     
 def isci_listele():
-    cursor.execute('select * from fehleler')
+    cursor.execute('SELECT * FROM fehleler')
     isciler = cursor.fetchall()
     for i in isciler:
         print(f"\nid:{i[0]} name: {i[1]} surname: {i[2]} age: {i[3]}\n")
@@ -46,15 +46,15 @@ def isci_guncelle():
     yeni_ad = input("yeni ad\n:")
     yeni_soyad = input("yeni soyad\n:")
     yeni_yas = int(input("yeni yas\n:"))
-    cursor.execute('''update fehleler set name = ?, surname = ?, age = ?
-                   where id = ?''',
+    cursor.execute('''UPDATE fehleler SET name = ?, surname = ?, age = ?
+                   WHERE id = ?''',
                    (yeni_ad,yeni_soyad,yeni_yas,isci_id))
     conn.commit()
-    print("ugurla guncellendi!\n")
+    print("Ugurla guncellendi!\n")
 def isci_sil():
     isci_listele()
     isci_id = int(input("silmey istediyiniz iscinin id'sin daxil edin\n:"))
-    cursor.execute('''delete from fehleler where id = ?''',(isci_id,))
+    cursor.execute('''DELETE FROM fehleler WHERE id = ?''',(isci_id,))
     conn.commit()
     print("ugurla silindi!\n")
 

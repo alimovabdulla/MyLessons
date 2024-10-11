@@ -5,20 +5,18 @@ parol_t = "S123"
 telebe = {}
 
 def telebe_guncelle(ad, yas, sinfi, nomre, bal):
-    """Telebe m?lumatlar?n? g?ncelleyir."""
     if ad in telebe:
         telebe[ad]["yas"] = yas
-        telebe[ad]["nomre"] = sinfi
+        telebe[ad]["sinfi"] = sinfi
+        telebe[ad]["nomre"] = nomre
         telebe[ad]["bal"] = bal
     else:
         print(f"Telebe {ad} Sistemde Tapilmadi!")
 
 def telebe_elave_et(ad, yas, sinfi, nomre, bal):
-    """Yeni telebe ?lav? edir."""
     telebe[ad] = {"yas": yas, "sinfi": sinfi, "nomre": nomre, "bal": bal}
 
 def muellim():
-    """M??llim ???n giri? v? menyu."""
     parol = input("Parolu Daxil Edin\n: ")
     if parol == parol_m:
         while True:
@@ -66,23 +64,21 @@ def muellim():
                 print("Sistemden Ugurla Cixdiniz!\n\n")
                 break
     else:
-        print("Parol Yaln??d?r!!!")
+        print("Parol Yanl??d?r!!!")
 
 def sagird():
-    """?agird ???n giri?."""
     c = input("Parol: ")
     if c == parol_t:
-        ad = input("Ad?n?z? daxil edin: ")
+        ad = input("Adinizi daxil edin: ")
         if ad in telebe:
-          for ad in telebe:
-                    print(ad)
+            for ad in telebe:
+                print(ad)
         else:
             print("Telebe tapilmadi!")
     else:
         print("Siz icaz?li deyilsiniz!")
 
 def menu():
-    """Ana menyu funksiyas?."""
     a = int(input("Xo? G?lmisiniz!\nM??lliml?r ???n 1\n?agirdl?r ???n 2\nD?ym?sini se?in\n: "))
     if a == 1:
         muellim()
@@ -91,8 +87,3 @@ def menu():
 
 while True:
     menu()
-
-
- 
-
-
