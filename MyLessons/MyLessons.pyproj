@@ -11,6 +11,11 @@
     <OutputPath>.</OutputPath>
     <Name>MyLessons</Name>
     <RootNamespace>MyLessons</RootNamespace>
+    <TestFramework>Pytest</TestFramework>
+    <InterpreterId>CondaEnv|CondaEnv|Ders</InterpreterId>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
+    <IsWindowsApplication>False</IsWindowsApplication>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -23,15 +28,18 @@
   <ItemGroup>
     <Compile Include="Examples\api.py" />
     <Compile Include="Examples\binanceapi.py" />
+    <Compile Include="Examples\loginwithsqllite3.py" />
+    <Compile Include="LeetCode.py" />
     <Compile Include="Lessons\First Month\DataTypes.py" />
     <Compile Include="Lessons\First Month\Ders-1.py" />
     <Compile Include="Lessons\First Month\Ders-3.py" />
     <Compile Include="Lessons\First Month\Ders-2.py" />
     <Compile Include="Lessons\First Month\Ders-4.py" />
     <Compile Include="Lessons\First Month\Ders-5.py" />
-    <Compile Include="Lessons\First Month\Ders-6.py" />
+    <Compile Include="Lessons\Second Month\Ders-1.py" />
     <Compile Include="Examples\filehandling.py" />
     <Compile Include="Examples\sqllite3.py" />
+    <Compile Include="Lessons\Second Month\Ders-2.py" />
     <Compile Include="Tasks\Task-1.py" />
     <Compile Include="Tasks\Task-2.py" />
     <Compile Include="Tasks\Task-3.py" />
@@ -47,6 +55,9 @@
     <Folder Include="Lessons\Third Month\" />
     <Folder Include="Lessons\Second Month\" />
     <Folder Include="Tasks\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="CondaEnv|CondaEnv|Ders" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
