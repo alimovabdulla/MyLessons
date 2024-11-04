@@ -42,6 +42,7 @@
     <Compile Include="Examples\sqllite3.py" />
     <Compile Include="Lessons\Second Month\Ders-2.py" />
     <Compile Include="Lessons\Second Month\Ders-3.py" />
+    <Compile Include="Lessons\Second Month\Ders-4.py" />
     <Compile Include="Tasks\Task-1.py" />
     <Compile Include="Tasks\Task-2.py" />
     <Compile Include="Tasks\Task-3.py" />
