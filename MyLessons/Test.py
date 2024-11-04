@@ -1,18 +1,10 @@
-﻿import pandas as pd
-import numpy as np
+﻿from numpy import size
+import pandas as pd
+import matplotlib.pyplot as plt
 
-# CSV faylını yüklə
-df = pd.read_csv(r"C:\Users\ASUS\Desktop\output.csv")
-
-# Yalnız rəqəmsal dəyərləri olan sütunları seçirik
-numeric_df = df.select_dtypes(include=[np.number])
-
-# NaN dəyərlərini 0 ilə doldururuq (lazım olarsa)
-numeric_df.fillna(0, inplace=True)
-
-# Hər rəqəmsal sütunun orta dəyərlərini hesablamaq
-mean_values = numeric_df.mean()
- 
-# Nəticələri çap edirik
-print("Sütunların ortalama dəyərləri:")
-print(np.min(numeric_df))
+data = pd.read_csv(r"C:\Users\ASUS\Desktop\user_behavior_dataset.csv")
+systems_count  = data["Operating System"].value_counts()
+systems_count.plot(kind="bar", color="green", figaspectsize=(10,5))
+plt.xlabel("Emeliyyat Sistemi")
+plt.ylabel("Alis")
+plt.show()

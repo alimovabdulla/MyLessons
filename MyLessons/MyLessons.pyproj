@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>381d1bc7-90db-49c7-ad12-0bbe483c9114</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Test.py</StartupFile>
+    <StartupFile>Examples\PandasAndNumPy.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -29,6 +29,7 @@
     <Compile Include="Examples\api.py" />
     <Compile Include="Examples\binanceapi.py" />
     <Compile Include="Examples\loginwithsqllite3.py" />
+    <Compile Include="Examples\PandasAndNumPy.py" />
     <Compile Include="LeetCode.py" />
     <Compile Include="Lessons\First Month\DataTypes.py" />
     <Compile Include="Lessons\First Month\Ders-1.py" />
@@ -40,6 +41,7 @@
     <Compile Include="Examples\filehandling.py" />
     <Compile Include="Examples\sqllite3.py" />
     <Compile Include="Lessons\Second Month\Ders-2.py" />
+    <Compile Include="Lessons\Second Month\Ders-3.py" />
     <Compile Include="Tasks\Task-1.py" />
     <Compile Include="Tasks\Task-2.py" />
     <Compile Include="Tasks\Task-3.py" />
