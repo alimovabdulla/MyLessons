@@ -1,3 +1,5 @@
-﻿import pandas as pd
-data = pd.read_csv(r"C:\Users\ASUS\Desktop\instaads.csv")
-print(data)
+﻿def invert(lst):
+     for i in lst:
+         i = i[-2:]
+         
+         return i

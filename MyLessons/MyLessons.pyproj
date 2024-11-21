@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>381d1bc7-90db-49c7-ad12-0bbe483c9114</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Examples\PandasAndNumPy.py</StartupFile>
+    <StartupFile>Lessons\Second Month\Ders-6\Ders-6.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -43,6 +43,7 @@
     <Compile Include="Lessons\Second Month\Ders-2.py" />
     <Compile Include="Lessons\Second Month\Ders-3.py" />
     <Compile Include="Lessons\Second Month\Ders-4.py" />
+    <Compile Include="Lessons\Second Month\Ders-6\Ders-6.py" />
     <Compile Include="Tasks\Task-1.py" />
     <Compile Include="Tasks\Task-2.py" />
     <Compile Include="Tasks\Task-3.py" />
@@ -54,6 +55,8 @@
     <Folder Include="Lessons\Fourth Month\" />
     <Folder Include="Lessons\Fifth Month\" />
     <Folder Include="Lessons\" />
+    <Folder Include="Lessons\Second Month\Ders-5\" />
+    <Folder Include="Lessons\Second Month\Ders-6\" />
     <Folder Include="Lessons\Sixth Month\" />
     <Folder Include="Lessons\Third Month\" />
     <Folder Include="Lessons\Second Month\" />
@@ -61,6 +64,12 @@
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="CondaEnv|CondaEnv|Ders" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Lessons\Second Month\Ders-5\Статистика.pdf" />
+    <Content Include="Lessons\Second Month\Ders-6\LinearRegression.ipynb" />
+    <Content Include="Tasks\Taskk1.ipynb" />
+    <Content Include="Tasks\Taskk2.ipynb" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
