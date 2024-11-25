@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>381d1bc7-90db-49c7-ad12-0bbe483c9114</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Lessons\Second Month\Ders-6\Ders-6.py</StartupFile>
+    <StartupFile>Test.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -44,6 +44,8 @@
     <Compile Include="Lessons\Second Month\Ders-3.py" />
     <Compile Include="Lessons\Second Month\Ders-4.py" />
     <Compile Include="Lessons\Second Month\Ders-6\Ders-6.py" />
+    <Compile Include="Lessons\Third Month\Ders-1\streamlit.py" />
+    <Compile Include="Lessons\Third Month\Ders-1\streamlittask.py" />
     <Compile Include="Tasks\Task-1.py" />
     <Compile Include="Tasks\Task-2.py" />
     <Compile Include="Tasks\Task-3.py" />
@@ -60,6 +62,7 @@
     <Folder Include="Lessons\Sixth Month\" />
     <Folder Include="Lessons\Third Month\" />
     <Folder Include="Lessons\Second Month\" />
+    <Folder Include="Lessons\Third Month\Ders-1\" />
     <Folder Include="Tasks\" />
   </ItemGroup>
   <ItemGroup>
