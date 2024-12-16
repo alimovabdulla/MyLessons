@@ -12,7 +12,7 @@
     <Name>MyLessons</Name>
     <RootNamespace>MyLessons</RootNamespace>
     <TestFramework>Pytest</TestFramework>
-    <InterpreterId>CondaEnv|CondaEnv|Ders</InterpreterId>
+    <InterpreterId>CondaEnv|CondaEnv|forMath</InterpreterId>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
     <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
     <IsWindowsApplication>False</IsWindowsApplication>
@@ -63,14 +63,21 @@
     <Folder Include="Lessons\Third Month\" />
     <Folder Include="Lessons\Second Month\" />
     <Folder Include="Lessons\Third Month\Ders-1\" />
+    <Folder Include="Lessons\Third Month\Ders-2.3\" />
+    <Folder Include="Lessons\Third Month\Ders-3.3\" />
+    <Folder Include="Lessons\Third Month\Ders-4.3\" />
     <Folder Include="Tasks\" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="CondaEnv|CondaEnv|Ders" />
+    <InterpreterReference Include="CondaEnv|CondaEnv|forMath" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Lessons\Second Month\Ders-5\Статистика.pdf" />
     <Content Include="Lessons\Second Month\Ders-6\LinearRegression.ipynb" />
+    <Content Include="Lessons\Third Month\Ders-2.3\MLRa.ipynb" />
+    <Content Include="Lessons\Third Month\Ders-3.3\gradient.ipynb" />
+    <Content Include="Lessons\Third Month\Ders-4.3\KNN.ipynb" />
     <Content Include="Tasks\Taskk1.ipynb" />
     <Content Include="Tasks\Taskk2.ipynb" />
   </ItemGroup>

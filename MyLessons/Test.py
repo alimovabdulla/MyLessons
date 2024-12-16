@@ -1,42 +1,59 @@
-﻿import matplotlib.pyplot as plt
-import pandas as pd
-import numpy as np 
-from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_squared_error, r2_score
-from sklearn.model_selection import train_test_split
-np.random.seed(42)
+﻿import pandas as pd
+from deep_translator import GoogleTranslator
+import ast
+import os
+from tqdm import tqdm
 
-# Xüsusiyyətləri yarat
-Saha = np.random.randint(50, 200, 100)  # Sahə (kv.m)
-Mertebe = np.random.randint(1, 10, 100)  # Mərtəbə sayı
-Rayon = np.random.choice([1, 2, 3], 100)  # Rayon (1 - Bakı, 2 - Sumqayıt, 3 - Gəncə)
+def translate_text(text, source_lang='auto', target_lang='az'):
+    try:
+        return GoogleTranslator(source=source_lang, target=target_lang).translate(text)
+    except Exception as e:
+        print(f"Error translating '{text}': {e}")
+        return text
 
-# Qiymət: Sadə xətti modelə əsaslanır
-Qiymet = (
-    500 * Saha + 1000 * Mertebe + Rayon * 10000 + np.random.randint(-5000, 5000, 100)
-)
+# Məlumat faylını oxumaq
+df = pd.read_parquet(r"D:\Downloads\train-00000-of-00001.parquet")
 
-# DataFrame formatına çevir
-data = pd.DataFrame(
-    {"Sahə": Saha, "Mərtəbə": Mertebe, "Rayon": Rayon, "Qiymət (AZN)": Qiymet}
-)
+# Tərcümə ediləcək konversiyaları idarə edən funksiya
+def translate_conversations(conversations):
+    if isinstance(conversations, str):
+        try:
+            conversations_list = ast.literal_eval(conversations)  
+        except (ValueError, SyntaxError):
+            conversations_list = eval(conversations)
+    else:
+        conversations_list = conversations.tolist()  
+    for conv in conversations_list:
+        if 'value' in conv:
+            conv['value'] = translate_text(conv['value'])
 
-X = data[['Sahə','Mərtəbə','Rayon']]
-y = data["Qiymət (AZN)"]
+    return str(conversations_list)
 
-X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2,random_state=42)
+# Tərcümə prosesini daha yaxşı izləmək üçün tqdm istifadə etmək
+def translate_in_batches(df, batch_size=100):
+    total_rows = len(df)
+    num_batches = (total_rows // batch_size) + (1 if total_rows % batch_size != 0 else 0)
+    
+    # Hər bir hissəni tərcümə edib fayla yazmaq
+    output_folder = r"C:\Users\ASUS\Desktop\Model Ucun Datalar"
+    os.makedirs(output_folder, exist_ok=True)
 
-model = LinearRegression()
-model.fit(X_train,y_train)
+    for i in range(num_batches):
+        start_index = i * batch_size
+        end_index = start_index + batch_size
+        batch_df = df.iloc[start_index:end_index]
+        
+        # Tərcümə tətbiq etmək
+        batch_df['translated_conversations'] = batch_df['conversations'].apply(translate_conversations)
 
-y_pred = model.predict(X_test)
+        # Hər bir hissəni fərdi olaraq saxlayın
+        output_file_name = f'translated_data_{i+1}.parquet'
+        output_file_path = os.path.join(output_folder, output_file_name)
+        batch_df.to_parquet(output_file_path, index=False)
 
-mse = mean_squared_error(y_test,y_pred)
+        print(f"{i+1}-ci hissə tərcümə olundu və '{output_file_path}' faylında saxlanıldı.")
 
-plt.figure(figsize=(10,5))
-plt.scatter(y_test,y_pred)
-plt.plot([y.min(),y.max()],[y.min(),y.max()],color='red')
-plt.xlabel("Faktiki Qiymet")
-plt.ylabel("Proqnoz Qiymet")
-plt.title("Faktiki Ve Proqnoz")
-plt.show()
+# Tərcüməni icra et
+print("Prosesə başlamaq üçün hazırlıq görülür...")
+translate_in_batches(df)
+print("Tərcümə prosesi tamamlandı.")
